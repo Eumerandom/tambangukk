@@ -17,4 +17,3 @@ class Data extends Model
         'tgl_masuk',
     ];
 }
-yakin?
