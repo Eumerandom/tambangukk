@@ -12,13 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('data', function (Blueprint $table) {
-            $table->id();
-            $table->string('kode_barang');
-            $table->string('jenis_mineral');
-            $table->string('asal_mineral');
-            $table->float('berat_kotor');
-            $table->float('berat_bersih');
-            $table->time('tgl_masuk');
+            $table->id('id_data');
+            $table->foreignId('id_sda')->constrained('sumber_dayas')->onDelete('cascade');
+            $table->timestamps('tgl_masuk');
             $table->timestamps();
         });
     }

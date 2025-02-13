@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Data extends Model
+class Distribusi extends Model
 {
-    /** @use HasFactory<\Database\Factories\DataFactory> */
+    /** @use HasFactory<\Database\Factories\DistribusiFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'tgl_masuk',
+        'tgl_keluar',
     ];
 }
