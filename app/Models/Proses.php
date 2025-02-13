@@ -10,10 +10,14 @@ class Proses extends Model
     /** @use HasFactory<\Database\Factories\ProsesFactory> */
     use HasFactory;
 
+    protected $table = 'proses';
+
     protected $fillable = [
-        'id_proses',
+        'id_sda',
         'tgl_mulai',
         'tgl_selesai',
         'status_proses',
+        'id_bahan',
+        'id_pengotor',
     ];
 }

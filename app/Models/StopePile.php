@@ -10,4 +10,10 @@ class StopePile extends Model
     /** @use HasFactory<\Database\Factories\StopePileFactory> */
     use HasFactory;
 
+    protected $table = 'stope_piles';
+
+    protected $fillable = [
+        'id_bahan',
+        'id_pengotor',
+    ];
 }

@@ -10,6 +10,8 @@ class MineralPengotor extends Model
     /** @use HasFactory<\Database\Factories\MineralPengotorFactory> */
     use HasFactory;
 
+    protected $table = 'mineral_pengotors';
+
     protected $fillable = [
         'jenis_pengotor',
         'volume_pengotor',
