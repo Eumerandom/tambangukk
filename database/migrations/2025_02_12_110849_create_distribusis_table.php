@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_distribusi');
             $table->foreignId('id_bahan')->constrained('bahan_galians','id_bahan')->onDelete('cascade');
             $table->foreignId('id_pengotor')->constrained('mineral_pengotors','id_pengotor')->onDelete('cascade');
+            $table->string('tujuan');
             $table->date('tgl_keluar');
             $table->timestamps();
         });

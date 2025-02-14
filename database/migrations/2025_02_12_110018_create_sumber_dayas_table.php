@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('sumber_dayas', function (Blueprint $table) {
             $table->id('id_sda');
+            $table->foreignId('id_jenis')->constrained('jenis_sumber_dayas','id_jenis')->onDelete('cascade');
+            $table->foreignId('id_asal')->constrained('asal_sumber_dayas','id_asal')->onDelete('cascade');
             $table->string('kode_sda');
-            $table->string('jenis_sda');
             $table->float('volume_sda');
             $table->float('berat_kotor');
-            $table->string('asal_sda');
             $table->timestamps();
         });
     } 
