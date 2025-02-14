@@ -10,6 +10,8 @@ class SumberDaya extends Model
     /** @use HasFactory<\Database\Factories\SumberDayaFactory> */
     use HasFactory;
 
+    protected $table = 'sumber_dayas';
+
     protected $fillable = [
         'kode_sda',
         'jenis_sda',

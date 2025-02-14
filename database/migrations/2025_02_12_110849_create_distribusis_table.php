@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('distribusis', function (Blueprint $table) {
             $table->id('id_distribusi');
-            $table->foreignId('id_bahan')->constrained('bahan_galians')->onDelete('cascade');
-            $table->foreignId('id_pengotor')->constrained('mineral_pengotors')->onDelete('cascade');
-            $table->timestamps('tgl_keluar');
+            $table->foreignId('id_bahan')->constrained('bahan_galians','id_bahan')->onDelete('cascade');
+            $table->foreignId('id_pengotor')->constrained('mineral_pengotors','id_pengotor')->onDelete('cascade');
+            $table->date('tgl_keluar');
             $table->timestamps();
         });
     }

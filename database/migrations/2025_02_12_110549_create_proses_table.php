@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('proses', function (Blueprint $table) {
             $table->id('id_proses');
-            $table->foreignId('id_sda')->constrained('sumber_dayas')->onDelete('cascade');
-            $table->timestamps('tgl_mulai');
-            $table->timestamps('tgl_selesai');
-            $table->enum('status_proses');
-            $table->foreignId('id_bahan')->constrained('bahan_galians')->onDelete('cascade');
-            $table->foreignId('id_pengotor')->constrained('mineral_pengotors')->onDelete('cascade');
+            $table->foreignId('id_sda')->constrained('sumber_dayas', 'id_sda')->onDelete('cascade');
+            $table->date('tgl_mulai');
+            $table->date('tgl_selesai');
+            $table->enum('status_proses', ['belum_diproses', 'sedang_diproses', 'selesai_diproses']);
+            $table->foreignId('id_bahan')->constrained('bahan_galians', 'id_bahan')->onDelete('cascade');
+            $table->foreignId('id_pengotor')->constrained('mineral_pengotors', 'id_pengotor')->onDelete('cascade');
             $table->timestamps();
         });
     }

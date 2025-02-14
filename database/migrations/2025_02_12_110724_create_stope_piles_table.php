@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('stope_piles', function (Blueprint $table) {
             $table->id('id_stope');
-            $table->foreignId('id_bahan')->constrained('bahan_galians')->onDelete('cascade');
-            $table->foreignId('id_pengotor')->constrained('mineral_pengotors')->onDelete('cascade');
+            $table->foreignId('id_bahan')->constrained('bahan_galians','id_bahan')->onDelete('cascade');
+            $table->foreignId('id_pengotor')->constrained('mineral_pengotors','id_pengotor')->onDelete('cascade');
             $table->timestamps();
         });
     }

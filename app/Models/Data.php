@@ -10,7 +10,10 @@ class Data extends Model
     /** @use HasFactory<\Database\Factories\DataFactory> */
     use HasFactory;
 
+    protected $table = 'data';
+    
     protected $fillable = [
+        'id_data',
         'tgl_masuk',
     ];
 }
