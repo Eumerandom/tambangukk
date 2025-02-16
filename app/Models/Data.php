@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Data extends Model
 {
-    /** @use HasFactory<\Database\Factories\DataFactory> */
     use HasFactory;
 
     protected $table = 'data';
-    
+
     protected $fillable = [
-        'id_data',
-        'tgl_masuk',
+        'jenis_id',
+        'asals_id',
+        'kode_sda',
+        'volume_sda',
+        'berat_kotor',
     ];
 }

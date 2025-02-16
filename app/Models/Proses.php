@@ -7,17 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proses extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProsesFactory> */
     use HasFactory;
 
     protected $table = 'proses';
 
     protected $fillable = [
-        'id_sda',
+        'data_id',
+        'status',
         'tgl_mulai',
         'tgl_selesai',
-        'status_proses',
-        'id_bahan',
-        'id_pengotor',
+        'bahan_galians_id',
+        'mineral_pengotors_id',
     ];
 }
