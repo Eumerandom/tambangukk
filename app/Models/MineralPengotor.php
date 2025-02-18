@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class MineralPengotor extends Model
 {
-    /** @use HasFactory<\Database\Factories\MineralPengotorFactory> */
     use HasFactory;
 
+    protected $table = 'mineral_pengotors';
+
     protected $fillable = [
-        'jenis_pengotor',
-        'volume_pengotor',
-        'berat_pengotor',
+        'jenis_id',
+        'asals_id',
+        'volume',
+        'berat',
     ];
 }

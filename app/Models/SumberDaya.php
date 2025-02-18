@@ -7,14 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class SumberDaya extends Model
 {
-    /** @use HasFactory<\Database\Factories\SumberDayaFactory> */
     use HasFactory;
 
+    protected $table = 'sumber_dayas';
+
     protected $fillable = [
-        'kode_sda',
-        'jenis_sda',
-        'volume_sda',
-        'berat_kotor',
-        'asal_sda',
+        'data_id',
+        'tgl_masuk',
     ];
+
+    // Relasi dengan tabel data
+    public function data()
+    {
+        return $this->belongsTo(Data::class, 'data_id');
+    }
+
 }
