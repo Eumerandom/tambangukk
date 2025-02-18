@@ -64,7 +64,7 @@ class Data extends Model
     // relasi antara sumber daya dengan data
     public function sumberDayas()
     {
-        return $this->hasMany(SumberDaya::class, 'sumberdayas_id');
+        return $this->hasMany(SumberDaya::class);
     }
 
 }

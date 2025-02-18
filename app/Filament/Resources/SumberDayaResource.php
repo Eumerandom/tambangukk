@@ -30,6 +30,7 @@ class SumberDayaResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(SumberDaya::with('data')) // Mengambil data dengan relasi
             ->columns([
                 Tables\Columns\TextColumn::make('data.kode_sda')->label('KODE')->searchable(),
                 // Tables\Columns\TextColumn::make('tgl_masuk')->label('TANGGAL')->searchable(),
@@ -48,6 +49,11 @@ class SumberDayaResource extends Resource
             ->bulkActions([
                 //
             ]);
+    }
+
+    public static function canCreate(): bool
+    {
+        return false; // Mencegah admin menambahkan data secara manual
     }
 
     public static function getRelations(): array
