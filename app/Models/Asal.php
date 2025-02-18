@@ -15,4 +15,14 @@ class Asal extends Model
         'nama_asal',
         'kode_asal',
     ];
+
+    public function setNamaAsalAttribute($value) 
+    {
+        $this->attributes['nama_asal'] = ucfirst(strtolower($value)); 
+    }
+    
+    public function setKodeAsalAttribute($value) 
+    {
+        $this->attributes['kode_asal'] = strtoupper($value);
+    }
 }

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\AsalResource\Pages;
+namespace App\Filament\Resources\SumberDayaResource\Pages;
 
-use App\Filament\Resources\AsalResource;
+use App\Filament\Resources\SumberDayaResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditAsal extends EditRecord
+class EditSumberDaya extends EditRecord
 {
-    protected static string $resource = AsalResource::class;
+    protected static string $resource = SumberDayaResource::class;
 
     protected function getHeaderActions(): array
     {

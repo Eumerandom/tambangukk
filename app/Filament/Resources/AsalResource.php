@@ -23,7 +23,22 @@ class AsalResource extends Resource
     {
         return $form
             ->schema([
-                //
+
+                //card
+                Forms\Components\Card::make()
+                 ->schema([
+
+                    Forms\Components\TextInput::make('nama_asal') //menyesuiakan field yang dibuat
+                        ->label('Nama Asal')
+                        ->placeholder('Masukkan Nama Asal')
+                        ->required(), //bintang merah, wajib
+
+                    Forms\Components\TextInput::make('kode_asal') 
+                        ->label('Kode Asal')
+                        ->placeholder('Masukkan Kode Asal')
+                        ->required(), 
+
+                 ])
             ]);
     }
 
@@ -31,7 +46,12 @@ class AsalResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
+                ->label('ID')
+                ->getStateUsing(fn ($record) => Asal::orderBy('id')->pluck('id') 
+                ->search($record->id) + 1), 
+                Tables\Columns\TextColumn::make('nama_asal')->label('NAMA')->searchable(),
+                Tables\Columns\TextColumn::make('kode_asal')->label('KODE')->searchable(),
             ])
             ->filters([
                 //

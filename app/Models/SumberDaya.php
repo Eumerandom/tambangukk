@@ -15,4 +15,11 @@ class SumberDaya extends Model
         'data_id',
         'tgl_masuk',
     ];
+
+    // Relasi dengan tabel data
+    public function data()
+    {
+        return $this->belongsTo(Data::class, 'data_id');
+    }
+
 }
